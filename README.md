@@ -1,2 +1,6 @@
 # polkuhaku
-Aineopintojen harjoitustyö: Tietorakenteet ja algoritmit 
+Tämä on suoritus kurssille [Aineopintojen harjoitustyö: Tietorakenteet ja algoritmit](https://studies.helsinki.fi/opintotarjonta/cu/hy-CU-118025627-2021-08-01/TKT20010/Aineopintojen_harjoitusty%C3%B6_Tietorakenteet_ja_algoritmit)
+This project is for the [Data Structures and Algorithms Lab](https://studies.helsinki.fi/opintotarjonta/cu/hy-CU-128551082-2021-08-01/BSCS2012/Datastructures_and_Algorithms_Lab) course Finnish equivalent.
+
+### Kuvaus
+Polkuhaku on projektityö, jossa vertaillaan algoritmeja lyhyimmän polun löytämiseen labyrintissa.

@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "polkuhaku"
+version = "0.1.0"
+description = ""
+authors = ["Heli Parviainen <heli.s.parviainen@helsinki.fi>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pytest = "^7.2.0"
+coverage = "^6.5.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^2.15.5"
+coverage = "^6.5.0"
+pytest = "^7.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
