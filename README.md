@@ -13,3 +13,4 @@ Polkuhaku on projektityö, jossa vertaillaan algoritmeja lyhyimmän polun löyt�
 
 ### Testikattavuus
 ![GHA workflow badge](https://github.com/heliparv/polkuhaku/workflows/CI/badge.svg)
+[![codecov](https://codecov.io/gh/heliparv/polkuhaku/branch/main/graph/badge.svg?token=W1CWXGM2BY)](https://codecov.io/gh/heliparv/polkuhaku)
