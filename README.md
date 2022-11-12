@@ -10,3 +10,6 @@ Polkuhaku on projektityö, jossa vertaillaan algoritmeja lyhyimmän polun löyt�
 - [Viikkoraportti 1](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/Viikkoraportti%201.md)
 - [Viikkoraportti 2](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/viikkoraportti2.md)
 - [Työaikakirjanpito](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/ty%C3%B6aikakirjanpito.md)
+
+### Testikattavuus
+![GHA workflow badge](https://github.com/heliparv/polkuhaku/workflows/CI/badge.svg)
