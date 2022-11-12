@@ -11,6 +11,7 @@ Edellisen viikon tehtäviin saamani kommentin perusteella totesin, että alkuper
 - Käytin aivan liian paljon aikaa siihen, että en osaa ajatella leveyttä ja pituutta oikein, koska minulla on ollut hyvin, hyvin stressaava viikko. Siispä ihan perus labyrintin sanakirjaksi muuttamisen koodaamiseen meni hämmästyttävän paljon aikaa.
 - panikoin
 - Lisäsin testikattavuutta näkyviin.
+- Aloitin pylintin conffaamisen
 - Aloin miettiä leveyshakua
 
 #### Mitä opin
