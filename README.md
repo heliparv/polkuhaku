@@ -1,5 +1,6 @@
 # polkuhaku
 Tämä on suoritus kurssille [Aineopintojen harjoitustyö: Tietorakenteet ja algoritmit](https://studies.helsinki.fi/opintotarjonta/cu/hy-CU-118025627-2021-08-01/TKT20010/Aineopintojen_harjoitusty%C3%B6_Tietorakenteet_ja_algoritmit)
+
 This project is for the [Data Structures and Algorithms Lab](https://studies.helsinki.fi/opintotarjonta/cu/hy-CU-128551082-2021-08-01/BSCS2012/Datastructures_and_Algorithms_Lab) course Finnish equivalent.
 
 ### Kuvaus
@@ -7,8 +8,10 @@ Polkuhaku on projektityö, jossa vertaillaan algoritmeja lyhyimmän polun löyt�
 
 ### Dokumentaatio
 - [Määrittelydokumentti](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/M%C3%A4%C3%A4rittelydokumentti.md)
+- [Testausdokumentti](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/Testausdokumentti.md)
 - [Viikkoraportti 1](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/Viikkoraportti%201.md)
 - [Viikkoraportti 2](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/viikkoraportti2.md)
+- [Viikkoraportti 3](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/viikkoraportti3.md)
 - [Työaikakirjanpito](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/ty%C3%B6aikakirjanpito.md)
 
 ### Testikattavuus
