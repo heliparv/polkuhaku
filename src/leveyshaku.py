@@ -21,14 +21,19 @@ class Leveyshaku:
         jono = deque()
         jono.append(self.laby.labyrintti['alku'])
         print('Leveyshaku alkaa')
+        valmis = False
         while jono:
+            if valmis:
+                break
             paikka = jono.popleft()
             for naapuri in self.laby.labyrintti[paikka]:
                 if naapuri == self.laby.labyrintti['loppu']:
+                    valmis = True
                     self.polut[naapuri] = paikka
                     self.laby.merkitse_kayty_paikka(naapuri)
                     self.laby.tulosta_ratkaisu()
-                    #self.esita_polku(naapuri)
+                    self.esita_polku(naapuri)
+                    break
                 if naapuri in kayty:
                     continue
                 jono.append(naapuri)
@@ -43,11 +48,11 @@ class Leveyshaku:
         self.laby.luo_ratkaisugrafiikka()
         pituus = 0
         paikka = loppu
-        #while True:
-        #    paikka = self.laby.labyrintti[paikka]
-        #    pituus += 1
-        #    if paikka == self.laby.labyrintti['alku']:
-        #        break
-        #    self.laby.merkitse_kayty_paikka(paikka)
+        while True:
+            paikka = self.polut[paikka]
+            pituus += 1
+            if paikka == self.laby.labyrintti['alku']:
+                break
+            self.laby.merkitse_kayty_paikka(paikka)
         print(f'Löydetyn polun pituus on {pituus}')
         self.laby.tulosta_ratkaisu()

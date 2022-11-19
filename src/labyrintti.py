@@ -1,3 +1,5 @@
+from copy import deepcopy
+
 class Labyrintti:
     '''Luokka labyrintille. Tällä hetkellä palauttaa vain pyydettäessä yhden
     labyrintin, jotta saadaan ensin varsinaiset algoritmit tehtyä.
@@ -118,7 +120,7 @@ class Labyrintti:
 
     def luo_ratkaisugrafiikka(self):
         '''Alustaa grafiikan ratkaisuesitystä varten'''
-        self.ratkaisu = self.grafiikka
+        self.ratkaisu = deepcopy(self.grafiikka)
 
     def merkitse_kayty_paikka(self, paikka):
         '''Merkitsee annetun lattiapaikan käydyksi ratkaisuesityksessä'''

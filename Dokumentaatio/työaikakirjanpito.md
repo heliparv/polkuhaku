@@ -9,4 +9,6 @@
 | 11.11. |  4       | Labyrinttiluokan kirjoittamista, tyhjyyteen tuijottamista projektin tilaa pohdiskellen |
 | 12.11. |  4.5     | Aika lailla kaiken eilen koodatun uudelleen koodaamista, kärsimistä, testikattavuusraportoinnin lisäämistä näkyville |
 | 17.11. |  2       | Pylinttausta, uuden algoritmin pohdintaa, luovuttamista uuden algoritmin keksimisen suhteen |
+| 18.11. |  1       | Labyrintin testien kirjoittamista, algoritmien pohdintaa |
+| 19.11. |  1       | Leveyshaun rakentamista, testausdokumenttia, refaktorointia |
 | Yhteensä | 15   | Projektiin yhteensä kulunut aika |

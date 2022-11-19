@@ -3,12 +3,12 @@ Varsinaisen suunnitelman muodostaminen jumissa käytettävän ajan vähyyden vuo
 Hommat ovat juuri nyt solmussa, mutta selvitellään.
 
 ### Ajankäyttö
-
+4 h (Juuh elikkäs, olisihan sitä aikaa jostain ollut suotavaa enemmän repiä :D)
 
 #### Mitä tein
 - Kirjoitin testejä labyrintille
 - Kirjoitin testaudokumentin
-- Rakensin leveyshakua
+- Rakensin leveyshaun toimivaksi
 
 #### Mitä opin
 - Enpä mittään, mutta siinä on peiliin katsomista
