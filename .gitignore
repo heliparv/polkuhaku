@@ -2,3 +2,4 @@ htmlcom
 .coverage
 __pycache__
 .coveragerc
+.pytest_cache

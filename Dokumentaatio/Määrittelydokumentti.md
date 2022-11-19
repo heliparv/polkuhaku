@@ -1,4 +1,5 @@
 # Määrittelydokumentti
+HUOM! Esitetyt algoritmit todennäköisesti vaihtuvat, kunhan koodari keksii mikä kiinnostaa ja mitä haluaa elämältä.
 
 ### Kielet
 Python on projektissa käytetty ohjelmointikielikieli ja ainoa ohjelmointikieli, jolla osaan antaa järkevää palautetta ohjelmistoprojektin tasoisesta työstä.
