@@ -13,5 +13,5 @@
 | 19.11. |  1       | Leveyshaun rakentamista, testausdokumenttia, refaktorointia |
 | 24.11. |  1.5     | Seinänseuraajan rakentamista, algoritmeja kuvaavan artikkelin lukemista, labyrinttia kuvaavan kirjaston etsimistä |
 | 25.11. |  0.5     | Seinänseuraajan valmistelua |
-| 26.11. |          | Panikointia, dokumentaatiota
-| Yhteensä |    | Projektiin yhteensä kulunut aika |
+| 26.11. |  5       | Panikointia, dokumentaatiota, seinänseuraajan kirjoittamista |
+| Yhteensä | 32     | Projektiin yhteensä kulunut aika |

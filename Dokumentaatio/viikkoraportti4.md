@@ -6,9 +6,10 @@
 #### Mitä tein
 - Selailin githubista löytyviä kirjastoja satunnaisen labyrintin generoimiseen ja graafiseen esittämiseen.
 - Luin artikkelia aiheesta
+- Rakensin seinänseuraajaa
 
 #### Mitä opin
-- Laitetaan täh'än vaan se musta kuu emoji
+- Laitetaan tähän vaan se musta kuu emoji
 
 #### Miten ohjelma on edistynyt
 - Käytettävissä olleeseen aikaan nähden hyvin, kurssin tavoitteisiin nähden erittäin huonosti.
@@ -19,8 +20,10 @@
 
 #### Mitä teen seuraavaksi
 Prioriteettijärjestyksessä
+- Korjaan puutteen labyrintin vinoreittien lukemisessa
+- Korjataan polunhakualgoritmit niin, että saadaan ohjelman suorituksen loppuun raportti kummastakin löydetystä polusta
 - Aikavaativuustestaus
 - Tilavaativuustestaus
 - Dokumentaatio kuntoon
 - Otan käyttöön labyrintin generoimiseen ja piirtämiseen soveltuvan kirjaston
-- Mahdollisesti toinen algoritmi.
+- Mahdollisesti kolmas verrattava algoritmi

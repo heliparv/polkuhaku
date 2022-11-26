@@ -127,12 +127,6 @@ class Labyrintti:
         koord = paikka.split(',')
         mjono = self.ratkaisu[int(koord[0])]
         self.ratkaisu[int(koord[0])] = mjono[:int(koord[1])]+'.'+mjono[int(koord[1])+1:]
-    
-    def korketa_seinää(self, koordinaatit):
-        '''Seinänseuraaja-algoritmi koskettaa seinää mennessään.
-        Tällä algoritmilla seinä merkitään graafisessa esityksessä kosketetuksi'''
-        i, j = koordinaatit
-        self.ratkaisu[i] = self.ratkaisu[i][:j]+'X'+self.ratkaisu[i][j+1:]
 
     def tulosta_grafiikka(self):
         '''Tulostaa grafiikan riveittäin, jotta se näyttää labyrintilta'''

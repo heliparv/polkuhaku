@@ -15,6 +15,7 @@ Verrattavat algoritmit ja perustelut niiden valintaan:
 - Wall follower: Yksinkertainen, käytetty jo antiikissa, saattaa olla leveyshakua nopeampi riippuen labyrintista
     - Aikavaativuustavoite: pienempi kuin O(n+m)
     - Saattaa kuulemma jäädä jumiin jos labyrintissa on syklejä. Oletan, ettei tämä tule ongelmaksi nykyisenmuotoisten labyrinttien ja käytössä olevan algoritmin kanssa, mutta katsotaan!
+    - Olisiko ollut fiksumpaa etsiä valmis pseudokoodi kuin toteuttaa itse konseptin pohjalta? Todennäköisesti. Tämä kuitenkin antaa ihmiselle murusen verran serotoniinia joten tehdään nyt näin. :D
 - Mikäli jää aikaa ja energiaa: Hierarchical Pathfinding A*, HPA*
     - Aikavaativuustavoite: Lähteet sanovat että pitäisi olla kymmenkertaisesti lyhyempi kuin A*, jolla O(b^d) jossa b on keskimääräinen yhteyksien määrä ja d on lyhyimmän polun pituus
     - HPA*:n ei pitäisi toimia labyrintissa jos eteneminen kohti maalia ei ole aina optimaalinen idea ja jos maalin sijainti ei ole tiedossa. Käytetyssä algoritmissa oletetaan maalin sijainti tunnetuksi ja Botea et al ovat esittävät tuloksia algoritmilla Baldur's gaten labyrinteissa, joten kiinnostaa.

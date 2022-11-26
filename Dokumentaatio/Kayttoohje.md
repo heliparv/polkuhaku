@@ -9,7 +9,9 @@ Tällä hetkellä kasassa oleva ohjelma on koodarin yleisen jaksavuuden puutteen
     - 'A' = alku
     - 'B' = loppu
 - Labyrintin reunat ovat seinää, joissa sijaitsevat myös alku ja loppu
-- Alku ja loppu voivat sijaita vain seinillä
+- Alku ja loppu voivat sijaita vain seinillä, eivät nurkassa
+- Labyrintissa voi kulkea sivuille, ylös ja alas mikäli sivuiltaan koskettavat lattian osat ovat molemmat lattiaa.
+- Labyrintissa voi kulkea vinottain mikäli lattiaa ovat sekä määränpää että jompi kumpi ruuduista jotka ovat määränpään ja lähöruudun kanssa naapureita 
 
 ### Ohjelman käyttäminen
 Tällä hetkellä ohjelma toimii vain suorittamalla index.py tiedoston. Esimerkiksi terminaalissa avaamalla ohjelman sisältävän kansion ja suorittamalla käskyn
