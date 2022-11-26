@@ -1,5 +1,5 @@
 ## Ohjelman yleisrakenne
-
+![Rakennekaavio](Rakennekaavio.png)
 - Index: ohjelman tämänhetkinen käyttöliittymä :) Ottaa yhteyden kaikkiin muihin
 - Testilabyrintti: Antaa täsmälleen yhden listamuotoisen labyrintin, jota käytetään tällä hetkellä ohjelman ajamiseen
 - Labyrintti: Sisältää labyrinttien lukemiseen, tietorakenteeseen ja graafiseen esitykseen käytetyn luokan
