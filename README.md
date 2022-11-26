@@ -7,11 +7,14 @@ This project is for the [Data Structures and Algorithms Lab](https://studies.hel
 Polkuhaku on projektityö, jossa vertaillaan algoritmeja lyhyimmän polun löytämiseen labyrintissa.
 
 ### Dokumentaatio
+- [Käyttöohje](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/Kayttoohje.md)
 - [Määrittelydokumentti](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/M%C3%A4%C3%A4rittelydokumentti.md)
 - [Testausdokumentti](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/Testausdokumentti.md)
+- [Toteutusdokumentti](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/Toteutusdokumentti.md)
 - [Viikkoraportti 1](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/Viikkoraportti%201.md)
 - [Viikkoraportti 2](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/viikkoraportti2.md)
 - [Viikkoraportti 3](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/viikkoraportti3.md)
+- [Viikkoraportti 4](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/viikkoraportti4.md)
 - [Työaikakirjanpito](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/ty%C3%B6aikakirjanpito.md)
 
 ### Testikattavuus
