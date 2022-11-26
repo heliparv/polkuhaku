@@ -12,10 +12,12 @@ Projektissa verrataan reitinhakualgoritmeja lyhyimmän reitin löytämiseen alus
 Verrattavat algoritmit ja perustelut niiden valintaan:
 - Leveyshaku (Breadth First Search): Yksinkertainen, löytää taatusti lyhyimmän reitin.
     - Aikavaativuustavoite: O(n+m) jossa m solmut ja n kaaret
-- Wall follower: Yksinkertainen, käytetty jo antiikissa, saattaa olla leveyshakua nopeampi
+- Wall follower: Yksinkertainen, käytetty jo antiikissa, saattaa olla leveyshakua nopeampi riippuen labyrintista
     - Aikavaativuustavoite: pienempi kuin O(n+m)
-- Hierarchical Pathfinding A*
+    - Saattaa kuulemma jäädä jumiin jos labyrintissa on syklejä. Oletan, ettei tämä tule ongelmaksi nykyisenmuotoisten labyrinttien ja käytössä olevan algoritmin kanssa, mutta katsotaan!
+- Mikäli jää aikaa ja energiaa: Hierarchical Pathfinding A*, HPA*
     - Aikavaativuustavoite: Lähteet sanovat että pitäisi olla kymmenkertaisesti lyhyempi kuin A*, jolla O(b^d) jossa b on keskimääräinen yhteyksien määrä ja d on lyhyimmän polun pituus
+    - HPA*:n ei pitäisi toimia labyrintissa jos eteneminen kohti maalia ei ole aina optimaalinen idea ja jos maalin sijainti ei ole tiedossa. Käytetyssä algoritmissa oletetaan maalin sijainti tunnetuksi ja Botea et al ovat esittävät tuloksia algoritmilla Baldur's gaten labyrinteissa, joten kiinnostaa.
 
 Kolmen algoritmin toimintaa verrataan eri kokoisissa labyrinteissa, joissa on joko paljon tai vähän seiniä.
 
@@ -24,6 +26,8 @@ Tietojenkäsittelytieteen kandiohjelma
 
 ### Lähteet
 [Harabor, D. 5.5.2009, Clearance-based Pathfinding and Hierarchical Annotated A* Search](https://web.archive.org/web/20190411040123/http://aigamedev.com/open/article/clearance-based-pathfinding/), archive.org tiedosto, viitattu 10.11.2022
+
+[Botea A., Müller M., Schaeffer J., 2004, Near optimal hierarchical path-finding (HPA*)](https://www.researchgate.net/publication/228785110_Near_optimal_hierarchical_path-finding_HPA)
 
 Laaksonen, A. 2021. Tietorakenteet ja algoritmit. Kurssimoniste
 

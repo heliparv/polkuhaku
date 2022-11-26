@@ -1,10 +1,11 @@
 ## Testausdokumentti
 
+### Yksikkötestaus
 [![codecov](https://codecov.io/gh/heliparv/polkuhaku/branch/main/graph/badge.svg?token=W1CWXGM2BY)](https://codecov.io/gh/heliparv/polkuhaku)
 
-Yllä kuvattu badge on codecov:n avulla luotu token tämänhetkisestä testien haarakattavuudesta. Testaus suoritetaan pytest yksikkötestauksella.
+Yllä kuvattu badge on codecov:n avulla luotu token tämänhetkisestä testien haarakattavuudesta.
 
-#### Testauksen toistaminen
+#### Yksikköestauksen toistaminen
 
 Ensin täytyy asentaa ohjelman riippuvuudet komennolla
 ```bash
@@ -20,3 +21,6 @@ Testiraportin voi luoda suorittamalla komennon
 coverage run --branch -m pytest; coverage html
 ```
 jolloin raportti luodaan htmlcov-kansion index.html -tiedostoon
+
+### Kurssin vaatima testaus
+En ole aloittanut, huppista :')
