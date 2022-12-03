@@ -32,9 +32,7 @@ class Leveyshaku:
         jono = deque()
         jono.append(self.laby.labyrintti['alku'])
         valmis = False
-        while jono:
-            if valmis:
-                break
+        while not valmis:
             paikka = jono.popleft()
             for naapuri in self.laby.labyrintti[paikka]:
                 if naapuri == self.laby.labyrintti['loppu']:
@@ -88,6 +86,7 @@ class Leveyshaku:
             if paikka == self.laby.labyrintti['alku']:
                 break
             self.laby.merkitse_kayty_paikka(paikka)
+        print("Leveyshaun löytämä ratkaisu:")
         self.laby.tulosta_ratkaisu()
     
     def merkkijono_koordinaatiksi(self, mjono):

@@ -4,7 +4,7 @@ Totta puhuen tämä viikko on mennyt erinäisistä syistä pilalle ja ohjelman v
 Graafisen käyttöliittymän koodaaminen on aloitettu, mutta 
 
 #### Ajankäyttö
-
+6,1
 
 #### Mitä tein
 - Piirsin labyrinttia

@@ -32,6 +32,7 @@ class Seinanseuraaja:
             jatketaan = self.hae_askel()
         loppu = time.time()
         self.aika = loppu-alku
+        print('Seinänseuraaja-algoritmin löytämä polku:')
         self.laby.tulosta_ratkaisu()
 
     def ensiaskel(self):
@@ -65,7 +66,6 @@ class Seinanseuraaja:
             self.laby.merkitse_kayty_paikka(koordinaatti)
             self.paikka = koordinaatti
         self.pituus += 1
-        self.laby.tulosta_ratkaisu()
 
     def hae_askel(self):
         '''Hakee seuraavan askeleen hyödyntäen seinänhakijaa.'''

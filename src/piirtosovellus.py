@@ -4,9 +4,10 @@ from labyrintti import Labyrintti
 from leveyshaku import Leveyshaku
 
 testilaby = Testilabyrintti()
-laby = Labyrintti(testilaby.labyrintti)
+#laby = Labyrintti(testilaby.labyrintti)
 #leveyshaku = Leveyshaku(laby)
 #leveyshaku.hae_polku()
+laby = Labyrintti()
 
 kello = pygame.time.Clock()
 print(laby.korkeus())
@@ -33,7 +34,7 @@ for rivi in laby.grafiikka:
             #seina.append(pygame.Rect(x,y,dimensio,dimensio))
             continue
         else:
-            print(x,y)
+            #print(x,y)
             lattia.append(pygame.Rect(x,y,dimensio,dimensio))
         x += dimensio
     y += dimensio
