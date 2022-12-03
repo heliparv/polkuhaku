@@ -15,6 +15,7 @@ Polkuhaku on projektityö, jossa vertaillaan algoritmeja lyhyimmän polun löyt�
 - [Viikkoraportti 2](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/viikkoraportti2.md)
 - [Viikkoraportti 3](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/viikkoraportti3.md)
 - [Viikkoraportti 4](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/viikkoraportti4.md)
+- [Viikkoraportti 5](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/viikkoraportti5.md)
 - [Työaikakirjanpito](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/ty%C3%B6aikakirjanpito.md)
 
 ### Testikattavuus
