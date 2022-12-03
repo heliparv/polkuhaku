@@ -1,4 +1,5 @@
 from labyrintti import Labyrintti
+import time
 
 class Seinanseuraaja:
     '''Luokka seinänseuraajaalgoritmin toteuttamiseen.
@@ -20,14 +21,17 @@ class Seinanseuraaja:
         self.paikka = ''
         self.pituus = 0
         self.laby.luo_ratkaisugrafiikka()
+        self.aika = 0
         self.hae_polku()
 
     def hae_polku(self):
+        alku = time.time()
         self.ensiaskel()
         jatketaan = True
         while jatketaan:
             jatketaan = self.hae_askel()
-        print(f'Löydetyn polun pituus {self.pituus}')
+        loppu = time.time()
+        self.aika = loppu-alku
         self.laby.tulosta_ratkaisu()
 
     def ensiaskel(self):
@@ -79,7 +83,6 @@ class Seinanseuraaja:
         if self.paikka == self.laby.labyrintti['loppu']:
             return False
         self.laby.merkitse_kayty_paikka(oikea_koord)
-        self.laby.tulosta_ratkaisu()
         return True
 
     def suhteellinen_koordinaatiksi(self, suhteellinen: str, nykyinen: str):
@@ -95,3 +98,9 @@ class Seinanseuraaja:
         nyky = nykyinen.split(',')
         vert = verrokki.split(',')
         return f'{int(vert[0])-int(nyky[0])},{int(vert[1])-int(nyky[1])}'
+
+    def aikavaativuus(self):
+        return f"Seinänseuraaja-algoritmin suorittamiseen kului {self.aika}"
+
+    def polun_pituus(self):
+        return f"Seinänseuraaja-algoritmilla löydetun polun pituus on {self.pituus}"

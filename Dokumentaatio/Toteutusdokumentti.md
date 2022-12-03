@@ -7,14 +7,14 @@
 - Seinänseuraaja: Suorittaa seinänseuraaja-algoritmin, tuloksena tulisi aina olla ratkaisu jolla päästään alusta loppuun
 
 ## Saavutetut aika- ja tilavaativuudet
-En tiedä vielä, mutta yritys on kova tietää aiheesta jotain ennen kuin työ pitäisi palauttaa. Myös algoritmien vertailu olisi tosi kiva.
+Aikaa testataan nyt time-paketin aikaoliolla. Minulla ei ole mitään käsitystä siitä, miten tämä muutetaan O() -tyypin aikavaativuuksiksi.
 
 ## Työn mahdolliset puutteet ja parannusehdotukset
 Kaikki :) Mutta yksityiskohtaisemmin:
 - Joku muu kuin terminaaliin tulostuva vaiheiden kuvaus olisi äärimmäisen kiva ohjelmassa, jossa saatetaan tehdä kirjaimellisesti satoja välivaiheita :D
-- Algoritmien olisi kiva olla esimerkiksi olemassa ja testatut
+- Olisi kivaa jos ehtisi toteuttaa kolmannen algoritmin
 - Käyttöliittymä yleensäkin voisi olla jotain muuta kuin "mee indexiin ja paina play"
-- Labyrintteja varten olisi kiva olla skripti, jolla voisi luoda tiettyjen vaatimusten mukaisia labyrintteja niin että algoritmeja voisi testata eri tyyppisillä 
+- Labyrintteja varten olisi kiva olla skripti, jolla voisi luoda tiettyjen vaatimusten mukaisia labyrintteja niin että algoritmeja voisi testata eri tyyppisillä labyrinteillä
 
 ## Lähteet
 [Harabor, D. 5.5.2009, Clearance-based Pathfinding and Hierarchical Annotated A* Search](https://web.archive.org/web/20190411040123/http://aigamedev.com/open/article/clearance-based-pathfinding/), archive.org tiedosto, viitattu 10.11.2022

@@ -14,4 +14,8 @@
 | 24.11. |  1.5     | Seinänseuraajan rakentamista, algoritmeja kuvaavan artikkelin lukemista, labyrinttia kuvaavan kirjaston etsimistä |
 | 25.11. |  0.5     | Seinänseuraajan valmistelua |
 | 26.11. |  5       | Panikointia, dokumentaatiota, seinänseuraajan kirjoittamista |
-| Yhteensä | 32     | Projektiin yhteensä kulunut aika |
+| 29.11. | 0.5      | Vertaisarvioitavaan ohjelmaan perehtymistä |
+| 30.11. |     | Vertaisarvioitavaan ohjelmaan perehtymistä, Labyrintin piirtosovelluksen koodaamista |
+| 2.12.  | 2.3      | Cubblipäivityksessä hajonneen pythonin korjailua, labyrintin piirtosovelluksen säätöä |
+| 3.12.  |          | n. 1.5 h edelleen pythonin ympäristöjen etsimistä, algoritmien ajankäytön testaus reaaliaikaisena, tekstikäyttöliittymään tulevan tulosteen järkeistäminen, kurssin vaatimien dokumenttien kirjoittamiseen menee yllättävän paljon aikaa |
+| Yhteensä |      | Projektiin yhteensä kulunut aika |

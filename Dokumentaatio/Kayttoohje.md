@@ -1,5 +1,5 @@
 ## Käyttöohje
-Tällä hetkellä kasassa oleva ohjelma on koodarin yleisen jaksavuuden puutteen vuoksi vielä erittäin vaiheessa, sori siitä. :D 
+Vaikka graafisen käyttöliittymän tynkä löytyy, koodi toimii toistaiseksi printtaamalla terminaaliin. Yritys parantaa tilannetta on kova.
 
 ### Ohjelman hyväksymä syöte
 - Ohjelma toimii niin, että graafisesta labyrintin esityksestä tehdään sanakirjamuotoinen esitys siitä, mistä koordinaatista voi siirtyä mihinkin koordinaattiin. Graafinen esitys on lista, jossa on merkkijonoja. Kukin listan jäsen vastaa yhtä riviä labyrintissa. Mallia voi katsoa testilabyrinmtti-tiedostosta

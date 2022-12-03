@@ -137,3 +137,9 @@ class Labyrintti:
         '''Tulostaa ratkaisugrafiikan riveittäin, jotta se näyttää labyrintilta'''
         for i in range(len(self.ratkaisu)):
             print(self.ratkaisu[i])
+
+    def leveys(self):
+        return len(self.grafiikka[0])
+
+    def korkeus(self):
+        return len(self.grafiikka)

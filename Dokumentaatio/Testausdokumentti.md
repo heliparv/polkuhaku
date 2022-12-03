@@ -1,4 +1,5 @@
 ## Testausdokumentti
+Tetstit eivät tällä hetkellä ole kattavia eivätkä testaa polkuhakualgoritmeja, koska en ole vielä koodannut kyseisiä testejä.
 
 ### Yksikkötestaus
 [![codecov](https://codecov.io/gh/heliparv/polkuhaku/branch/main/graph/badge.svg?token=W1CWXGM2BY)](https://codecov.io/gh/heliparv/polkuhaku)

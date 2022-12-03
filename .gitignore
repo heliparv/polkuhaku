@@ -3,3 +3,6 @@ htmlcom
 __pycache__
 .coveragerc
 .pytest_cache
+src/temp.py
+src/test.py
+.gitignore
