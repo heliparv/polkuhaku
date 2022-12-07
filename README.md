@@ -8,7 +8,7 @@ Polkuhaku on projektityö, jossa vertaillaan algoritmeja lyhyimmän polun löyt�
 
 ### Dokumentaatio
 - [Käyttöohje](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/Kayttoohje.md)
-- [Määrittelydokumentti](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/M%C3%A4%C3%A4rittelydokumentti.md)
+- [Määrittelydokumentti](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/Maarittelydokumentti.md)
 - [Testausdokumentti](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/Testausdokumentti.md)
 - [Toteutusdokumentti](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/Toteutusdokumentti.md)
 - [Viikkoraportti 1](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/Viikkoraportti%201.md)
