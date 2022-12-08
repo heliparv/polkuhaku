@@ -26,8 +26,7 @@ class Labyrintti:
                               '###    ##  #',
                               '#    ###  ##',
                               '#      #   #',
-                              '##########B#',
-                              ]
+                              '##########B#',]
         else:
             self.grafiikka = grafiikka
         self.labyrintti = {}
