@@ -3,6 +3,9 @@ from testilabyrintti import Testilabyrintti
 from labyrintti import Labyrintti
 from leveyshaku import Leveyshaku
 
+''''Tarkoitus on ehtiä koodaamaan graafinen käyttöliittymä, mutta homma on vielä hyvin vaiheessa
+Kannattaa siis ehkä olla huomioimatta tätä ollenkaan.'''
+
 testilaby = Testilabyrintti()
 #laby = Labyrintti(testilaby.labyrintti)
 #leveyshaku = Leveyshaku(laby)
