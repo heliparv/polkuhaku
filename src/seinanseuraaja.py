@@ -102,5 +102,8 @@ class Seinanseuraaja:
     def aikavaativuus(self):
         return f"Seinänseuraaja-algoritmin suorittamiseen kului {self.aika}"
 
+    def O_aikavaativuus(self):
+        return f"Annetuista {len(self.laby.labyrintti)} solmusta seinänseuraaja kävi läpi {len(self.polku)}"
+
     def polun_pituus(self):
         return f"Seinänseuraaja-algoritmilla löydetun polun pituus on {self.pituus}"

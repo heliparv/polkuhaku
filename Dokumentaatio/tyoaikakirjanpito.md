@@ -17,5 +17,6 @@
 | 29.11. | 0.5      | Vertaisarvioitavaan ohjelmaan perehtymistä |
 | 30.11. | 1        | Vertaisarvioitavaan ohjelmaan perehtymistä, Labyrintin piirtosovelluksen koodaamista |
 | 2.12.  | 2.3      | Cubblipäivityksessä hajonneen pythonin korjailua, labyrintin piirtosovelluksen säätöä |
-| 3.12.  | 2.3      | n. 1.5 h edelleen pythonin ympäristöjen etsimistä, algoritmien ajankäytön testaus reaaliaikaisena, tekstikäyttöliittymään tulevan tulosteen järkeistäminen, kurssin vaatimien dokumenttien kirjoittamiseen menee yllättävän paljon aikaa ottaen huomioon koodaukseen käytettyyn aikaan :D,  |
+| 3.12.  | 2.3      | n. 1.5 h edelleen pythonin ympäristöjen etsimistä, algoritmien ajankäytön testaus reaaliaikaisena, tekstikäyttöliittymään tulevan tulosteen järkeistäminen  |
+| 8.12.  | 3,5      | Testilabyrinttien yleistyksen parantaminen, O()-aikavaativuuden määrittämisen pohtimisen aloittelua, muuta sälää |
 | Yhteensä | 30.3   | Projektiin yhteensä kulunut aika |

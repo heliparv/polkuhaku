@@ -38,11 +38,10 @@ class Leveyshaku:
                 if naapuri == self.laby.labyrintti['loppu']:
                     valmis = True
                     self.polut[naapuri] = paikka
-                    self.laby.merkitse_kayty_paikka(naapuri)
                     loppu = time.time()
                     self.aika = loppu-alku
-                    print('Leveyshaussa vieraillut solmut:')
                     self.laby.tulosta_ratkaisu()
+                    self.esita_kaydyt_paikat()
                     self.esita_polku_ascii(naapuri)
                     break
                 if naapuri in kayty:
@@ -50,7 +49,6 @@ class Leveyshaku:
                 jono.append(naapuri)
                 kayty.add(naapuri)
                 self.polut[naapuri] = paikka
-                self.laby.merkitse_kayty_paikka(naapuri)
 
     def hae_polku(self):
         '''Hakee leveyshaulla reitin, talentaa mennessään listan
@@ -75,6 +73,14 @@ class Leveyshaku:
                 kayty.add(naapuri)
                 self.polut[naapuri] = paikka
 
+    def esita_kaydyt_paikat(self):
+        self.laby.luo_ratkaisugrafiikka()
+        for solmu in self.esitys:
+            self.laby.merkitse_kayty_paikka()
+        print('Leveyshaussa vieraillut solmut:')
+        self.laby.tulosta_ratkaisu()
+
+
     def esita_polku_ascii(self, loppu):
         '''Luo esityksen löydetystä lyhyimmästä polusta ja
         kertoo sen pituuden'''
@@ -95,6 +101,9 @@ class Leveyshaku:
 
     def aikavaativuus(self):
         return f"Leveyshaun suorittamiseen kului {self.aika}"
+
+    def O_aikavaativuus(self):
+        return f"Annetuista {len(self.laby.labyrintti)} solmusta leveyshaku kävi läpi {len(self.esitys)}"
 
     def polun_pituus(self):
         return f"Leveyshaulla löydetun polun pituus on {self.pituus}"

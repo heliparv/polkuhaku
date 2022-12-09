@@ -14,3 +14,5 @@ print(leveys.polun_pituus())
 print(seina.polun_pituus())
 print(leveys.aikavaativuus())
 print(seina.aikavaativuus())
+print(leveys.O_aikavaativuus())  #ei toimi
+print(seina.O_aikavaativuus())

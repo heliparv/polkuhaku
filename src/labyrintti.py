@@ -116,6 +116,13 @@ class Labyrintti:
                 if self.grafiikka[i][j+1] == ' ':
                     self.labyrintti[f'{i},{j}'].append(f'{i},{j+1}')
                     self.labyrintti[f'{i},{j+1}'].append(f'{i},{j}')
+        self.poista_seinasolmut()
+    
+    def poista_seinasolmut(self):
+        for i in range(1, len(self.grafiikka)-1):
+            for j in range(1, len(self.grafiikka[0])-1):
+                if self.labyrintti[f'{i},{j}'] == []:
+                    del self.labyrintti[f'{i},{j}']
 
     def luo_ratkaisugrafiikka(self):
         '''Alustaa grafiikan ratkaisuesitystä varten'''
@@ -136,6 +143,7 @@ class Labyrintti:
         '''Tulostaa ratkaisugrafiikan riveittäin, jotta se näyttää labyrintilta'''
         for i in range(len(self.ratkaisu)):
             print(self.ratkaisu[i])
+        print('')
 
     def leveys(self):
         return len(self.grafiikka[0])
