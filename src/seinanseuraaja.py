@@ -16,11 +16,11 @@ class Seinanseuraaja:
 
         self.polku = {}
         self.laby = labyrintti
-        self.seinanhakija = {'-1,-1':'0,-1','0,-1':'1,-1','1,-1':'1,0',
-        '1,0':'1,1','1,1':'0,1','0,1':'-1,1','-1,1':'-1,0','-1,0':'-1,-1'}
+        self.seinanhakija = {(-1,-1):(0,-1),(0,-1):(1,-1),(1,-1):(1,0),
+        (1,0):(1,1),(1,1):(0,1),(0,1):(-1,1),(-1,1):(-1,0),(-1,0):(-1,-1)}
         self.paikka = ''
-        self.pituus = 0
-        self.laby.luo_ratkaisugrafiikka()
+        self.pituus = 0 #poista?
+        self.laby.luo_ratkaisugrafiikka() #siirrä?
         self.aika = 0
         self.hae_polku()
 
@@ -32,6 +32,7 @@ class Seinanseuraaja:
             jatketaan = self.hae_askel()
         loppu = time.time()
         self.aika = loppu-alku
+        self.piirra_polku()
         print('Seinänseuraaja-algoritmin löytämä polku:')
         self.laby.tulosta_ratkaisu()
 
@@ -44,60 +45,50 @@ class Seinanseuraaja:
         2. Katso voiko vinoon oikealle mennä
         3. Mene vinoon oikealle tai suoraan eteen, tulosta ratkaisu'''
 
-        alku_str = self.laby.labyrintti['alku']
-        alku = alku_str.split(',')
-        if int(alku[1]) == 0:
-            vino_oikea = '1,1'
-        elif int(alku[1]) == len(self.laby.ratkaisu[0])-1:
-            vino_oikea = '-1,-1'
-        elif int(alku[0]) == 0:
-            vino_oikea = '1,-1'
+        alku = self.laby.labyrintti['alku']
+        if alku[1] == 0:
+            vino_oikea = (1,1)
+        elif alku[1] == len(self.laby.ratkaisu[0])-1:
+            vino_oikea = (-1,-1)
+        elif alku[0] == 0:
+            vino_oikea = (1,-1)
         else:
-            vino_oikea = '-1,1'
+            vino_oikea = (-1,1)
 
-        vino_koordinaatti = self.suhteellinen_koordinaatiksi(vino_oikea, alku_str)
-        if vino_koordinaatti in self.laby.labyrintti[alku_str]:
-            self.polku[vino_koordinaatti] = alku_str
-            self.laby.merkitse_kayty_paikka(vino_koordinaatti)
-            self.paikka = vino_koordinaatti
+        koordinaatti = (alku[0]+vino_oikea[0], alku[1]+vino_oikea[1])
+        if koordinaatti in self.laby.labyrintti[alku]:
+            self.polku[koordinaatti] = alku
+            self.paikka = koordinaatti
         else:
-            koordinaatti = self.suhteellinen_koordinaatiksi(self.seinanhakija[vino_oikea], alku_str)
-            self.polku[koordinaatti] = alku_str
-            self.laby.merkitse_kayty_paikka(koordinaatti)
+            koordinaatti = (alku[0]+self.seinanhakija[vino_oikea][0],alku[1]+self.seinanhakija[vino_oikea][1])
+            self.polku[koordinaatti] = alku
             self.paikka = koordinaatti
         self.pituus += 1
 
     def hae_askel(self):
-        '''Hakee seuraavan askeleen hyödyntäen seinänhakijaa.'''
-        #edellinen = self.polku[self.paikka]
-        hakukoord = self.koordinaatti_suhteelliseksi(self.paikka, self.polku[self.paikka])
+        '''Hakee seuraavan askeleen hyödyntäen seinänhakijaa.
+
+        Seinänhakijalle syötetty hakusuunta-muuttuja on suhteellinen koordinaattisiirtymä
+        nykyisestä paikasta edelliseen solmuun ja ns. siirtymäkompassia lähdetään
+        tarkistamaan tästä vastapäivään'''
+
+        hakusuunta = (self.polku[self.paikka][0]-self.paikka[0], self.polku[self.paikka][1]-self.paikka[1])
         while True:
-            hakukoord = self.seinanhakija[hakukoord]
-            oikea_koord = self.suhteellinen_koordinaatiksi(hakukoord, self.paikka)
-            if oikea_koord not in self.laby.labyrintti[self.paikka]:
+            hakusuunta = self.seinanhakija[hakusuunta]
+            hakukoord = (self.paikka[0]+hakusuunta[0], self.paikka[1]+hakusuunta[1])
+            if hakukoord not in self.laby.labyrintti[self.paikka]:
                 continue
             break
-        self.polku[oikea_koord] = self.paikka
-        self.paikka = oikea_koord
+        self.polku[hakukoord] = self.paikka
+        self.paikka = hakukoord
         self.pituus += 1
         if self.paikka == self.laby.labyrintti['loppu']:
             return False
-        self.laby.merkitse_kayty_paikka(oikea_koord)
         return True
 
-    def suhteellinen_koordinaatiksi(self, suhteellinen: str, nykyinen: str):
-        '''Ottaa nykyiseen koordinaattiin verratun suhteellisen merkkijonoesityksen
-        ja muuntaa sen koordinaatiksi labyrintissa nykyisen koordinaatin suhteen'''
-        muutos = suhteellinen.split(',')
-        nykykoordinaatti = nykyinen.split(',')
-        return f'{int(nykykoordinaatti[0])+int(muutos[0])},{int(nykykoordinaatti[1])+int(muutos[1])}'
-
-    def koordinaatti_suhteelliseksi(self, nykyinen: str, verrokki: str):
-        '''Ottaa kaksi merkkijonomuotoista koordinaattia ja tekee niistä suhteellisen
-        koordinaattiestityksen sille, miten nykyisestä pääsee verrokkiin'''
-        nyky = nykyinen.split(',')
-        vert = verrokki.split(',')
-        return f'{int(vert[0])-int(nyky[0])},{int(vert[1])-int(nyky[1])}'
+    def piirra_polku(self):
+        for paikka in self.polku:
+            self.laby.merkitse_kayty_paikka(self.polku[paikka])
 
     def aikavaativuus(self):
         return f"Seinänseuraaja-algoritmin suorittamiseen kului {self.aika}"

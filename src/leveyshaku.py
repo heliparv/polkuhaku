@@ -57,11 +57,11 @@ class Leveyshaku:
         kayty.add(self.laby.labyrintti['alku'])
         jono = deque()
         jono.append(self.laby.labyrintti['alku'])
-        self.esitys.append(self.merkkijono_koordinaatiksi(self.laby.labyrintti['alku']))
+        self.esitys.append(self.laby.labyrintti['alku'])
         valmis = False
         while not valmis:
             paikka = jono.popleft()
-            self.esitys.append(self.merkkijono_koordinaatiksi(paikka))
+            self.esitys.append(paikka)
             for naapuri in self.laby.labyrintti[paikka]:
                 if naapuri == self.laby.labyrintti['loppu']:
                     valmis = True
@@ -94,10 +94,6 @@ class Leveyshaku:
             self.laby.merkitse_kayty_paikka(paikka)
         print("Leveyshaun löytämä ratkaisu:")
         self.laby.tulosta_ratkaisu()
-    
-    def merkkijono_koordinaatiksi(self, mjono):
-        koord = mjono.split(',')
-        return (int(koord[0]), int(koord[1]))
 
     def aikavaativuus(self):
         return f"Leveyshaun suorittamiseen kului {self.aika}"

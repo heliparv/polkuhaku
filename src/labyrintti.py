@@ -40,65 +40,74 @@ class Labyrintti:
         self.lue_pystyreunat()
         self.lue_vaakareunat()
         self.lue_sisus()
+        self.poista_seinasolmut()
 
     def luo_solmut(self):
         '''luo_solmut: alustaa kaikki labyrintin sisällä olevat solmut, jottei niitä tarvitse
         luoda myöhemmin ja tarkistaa luennan yhteydessä ovatko jo olemassa.'''
         for i in range(1, len(self.grafiikka)-1):
             for j in range(1, len(self.grafiikka[0])-1):
-                self.labyrintti[f'{i},{j}'] = []
+                self.labyrintti[(i,j)] = []
 
     def lue_pystyreunat(self):
         ''''lue_pystyreunat: funktio lukee annetun grafiikan pystyreunat etsien alku- tai
         loppupistettä, jotka merkitsee labyrintin solmuesitykseen. Ei tarkastele
-        nurkkapaloja.'''
+        nurkkapaloja.
+        
+        Funktio on täysin turha jos alku ja loppu ovat aina samoissa nurkissa,
+        kuten testilabyrintissa'''
+
         for reuna in [0, len(self.grafiikka[0])-1]:
             for i in range(1, len(self.grafiikka)-1):
                 if self.grafiikka[i][reuna] in ['A', 'B']:
-                    self.labyrintti[f'{i},{reuna}'] = []
+                    self.labyrintti[(i, reuna)] = []
                     if reuna == 0:
                         ero = 1
                     else:
                         ero = -1
                     if self.grafiikka[i][reuna+ero] == ' ':
-                        self.labyrintti[f'{i},{reuna}'].append(f'{i},{reuna+ero}')
-                        self.labyrintti[f'{i},{reuna+ero}'].append(f'{i},{reuna}')
+                        self.labyrintti[(i,reuna)].append((i, reuna+ero))
+                        self.labyrintti[(i,reuna+ero)].append((i,reuna))
                         if self.grafiikka[i-1][reuna+ero] == ' ':
-                            self.labyrintti[f'{i},{reuna}'].append(f'{i-1},{reuna+ero}')
-                            self.labyrintti[f'{i-1},{reuna+ero}'].append(f'{i},{reuna}')
+                            self.labyrintti[(i, reuna)].append((i-1,reuna+ero))
+                            self.labyrintti[(i-1,reuna+ero)].append((i,reuna))
                         if self.grafiikka[i+1][reuna+ero] == ' ':
-                            self.labyrintti[f'{i},{reuna}'].append(f'{i+1},{reuna+ero}')
-                            self.labyrintti[f'{i+1},{reuna+ero}'].append(f'{i},{reuna}')
+                            self.labyrintti[(i,reuna)].append((i+1,reuna+ero))
+                            self.labyrintti[(i+1,reuna+ero)].append((i,reuna))
                         if self.grafiikka[i][reuna] == 'A':
-                            self.labyrintti['alku'] = f'{i},{reuna}'
+                            self.labyrintti['alku'] = (i,reuna)
                         else:
-                            self.labyrintti['loppu'] = f'{i},{reuna}'
+                            self.labyrintti['loppu'] = (i,reuna)
 
     def lue_vaakareunat(self):
         '''lue_vaakareunat: funktio lukee annetun grafiikan vaakareunat etsien alku- tai
         loppupistettä, jonka merkitsee labyrintin solmuesitykseen. Ei tarkastele
-        nurkkapaloja.'''
+        nurkkapaloja.
+        
+        Funktio on täysin turha jos alku ja loppu ovat aina samoissa nurkissa,
+        kuten testilabyrintissa'''
+
         for reuna in [0, len(self.grafiikka)-1]:
             for j in range(1, len(self.grafiikka[0])-1):
                 if self.grafiikka[reuna][j] in ['A', 'B']:
-                    self.labyrintti[f'{reuna},{j}'] = []
+                    self.labyrintti[(reuna,j)] = []
                     if reuna == 0:
                         ero = 1
                     else:
                         ero = -1
                     if self.grafiikka[reuna+ero][j] == ' ':
-                        self.labyrintti[f'{reuna},{j}'].append(f'{reuna+ero},{j}')
-                        self.labyrintti[f'{reuna+ero},{j}'].append(f'{reuna},{j}')
+                        self.labyrintti[(reuna,j)].append((reuna+ero,j))
+                        self.labyrintti[(reuna+ero,j)].append((reuna,j))
                     if self.grafiikka[reuna+ero][j-1] == ' ':
-                        self.labyrintti[f'{reuna},{j}'].append(f'{reuna+ero},{j-1}')
-                        self.labyrintti[f'{reuna+ero},{j-1}'].append(f'{reuna},{j}')
+                        self.labyrintti[(reuna,j)].append((reuna+ero,j-1))
+                        self.labyrintti[(reuna+ero,j-1)].append((reuna,j))
                     if self.grafiikka[reuna+ero][j-1] == ' ':
-                        self.labyrintti[f'{reuna},{j}'].append(f'{reuna+ero},{j-1}')
-                        self.labyrintti[f'{reuna+ero},{j-1}'].append(f'{reuna},{j}')
+                        self.labyrintti[(reuna,j)].append((reuna+ero,j-1))
+                        self.labyrintti[(reuna+ero,j-1)].append((reuna,j))
                     if self.grafiikka[reuna][j] == 'A':
-                        self.labyrintti['alku'] = f'{reuna},{j}'
+                        self.labyrintti['alku'] = (reuna,j)
                     else:
-                        self.labyrintti['loppu'] = f'{reuna},{j}'
+                        self.labyrintti['loppu'] = (reuna,j)
 
     def lue_sisus(self):
         '''lue_sisus: Funktio käy läpi annetun grafiikan muut kuin reunapalat ja merkitsee
@@ -108,21 +117,20 @@ class Labyrintti:
                 if self.grafiikka[i][j] == '#':
                     continue
                 if self.grafiikka[i+1][j+1] == ' ' and (self.grafiikka[i+1][j] == ' ' or self.grafiikka[i][j+1] == ' '):
-                    self.labyrintti[f'{i},{j}'].append(f'{i+1},{j+1}')
-                    self.labyrintti[f'{i+1},{j+1}'].append(f'{i},{j}')
+                    self.labyrintti[(i,j)].append((i+1,j+1))
+                    self.labyrintti[(i+1,j+1)].append((i,j))
                 if self.grafiikka[i+1][j] == ' ':
-                    self.labyrintti[f'{i},{j}'].append(f'{i+1},{j}')
-                    self.labyrintti[f'{i+1},{j}'].append(f'{i},{j}')
+                    self.labyrintti[(i,j)].append((i+1,j))
+                    self.labyrintti[(i+1,j)].append((i,j))
                 if self.grafiikka[i][j+1] == ' ':
-                    self.labyrintti[f'{i},{j}'].append(f'{i},{j+1}')
-                    self.labyrintti[f'{i},{j+1}'].append(f'{i},{j}')
-        self.poista_seinasolmut()
+                    self.labyrintti[(i,j)].append((i,j+1))
+                    self.labyrintti[(i,j+1)].append((i,j))
     
     def poista_seinasolmut(self):
         for i in range(1, len(self.grafiikka)-1):
             for j in range(1, len(self.grafiikka[0])-1):
-                if self.labyrintti[f'{i},{j}'] == []:
-                    del self.labyrintti[f'{i},{j}']
+                if self.labyrintti[(i,j)] == []:
+                    del self.labyrintti[(i,j)]
 
     def luo_ratkaisugrafiikka(self):
         '''Alustaa grafiikan ratkaisuesitystä varten'''
@@ -130,9 +138,8 @@ class Labyrintti:
 
     def merkitse_kayty_paikka(self, paikka):
         '''Merkitsee annetun lattiapaikan käydyksi ratkaisuesityksessä'''
-        koord = paikka.split(',')
-        mjono = self.ratkaisu[int(koord[0])]
-        self.ratkaisu[int(koord[0])] = mjono[:int(koord[1])]+'.'+mjono[int(koord[1])+1:]
+        mjono = self.ratkaisu[paikka[0]]
+        self.ratkaisu[paikka[0]] = mjono[:paikka[1]]+'.'+mjono[paikka[1]+1:]
 
     def tulosta_grafiikka(self):
         '''Tulostaa grafiikan riveittäin, jotta se näyttää labyrintilta'''
