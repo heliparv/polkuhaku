@@ -8,15 +8,16 @@ Polkuhaku on projektityö, jossa vertaillaan algoritmeja lyhyimmän polun löyt�
 
 ### Dokumentaatio
 - [Käyttöohje](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/Kayttoohje.md)
-- [Määrittelydokumentti](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/M%C3%A4%C3%A4rittelydokumentti.md)
+- [Määrittelydokumentti](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/Maarittelydokumentti.md)
 - [Testausdokumentti](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/Testausdokumentti.md)
-- [Toteutusdokumentti](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/Toteutusdokumentti.md)
+- [Toteutusdokumentti](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/Toteutusdokumentti.md) Vaatisi päivitystä
 - [Viikkoraportti 1](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/Viikkoraportti%201.md)
 - [Viikkoraportti 2](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/viikkoraportti2.md)
 - [Viikkoraportti 3](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/viikkoraportti3.md)
 - [Viikkoraportti 4](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/viikkoraportti4.md)
 - [Viikkoraportti 5](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/viikkoraportti5.md)
-- [Työaikakirjanpito](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/ty%C3%B6aikakirjanpito.md)
+- [Viikkoraportti 6](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/viikkoraportti6.md)
+- [Työaikakirjanpito](https://github.com/heliparv/polkuhaku/blob/main/Dokumentaatio/tyoaikakirjanpito.md)
 
 ### Testikattavuus
 ![GHA workflow badge](https://github.com/heliparv/polkuhaku/workflows/CI/badge.svg)
