@@ -1,5 +1,5 @@
-from labyrintti import Labyrintti
 import time
+from labyrintti import Labyrintti
 
 class Seinanseuraaja:
     '''Luokka seinänseuraajaalgoritmin toteuttamiseen.
@@ -42,7 +42,7 @@ class Seinanseuraaja:
         alku = self.laby.labyrintti['alku']
         if alku[1] == 0:
             vino_oikea = (1,1)
-        elif alku[1] == len(self.laby.ratkaisu[0])-1:
+        elif alku[1] == len(self.laby.grafiikka[0])-1:
             vino_oikea = (-1,-1)
         elif alku[0] == 0:
             vino_oikea = (1,-1)
@@ -89,7 +89,7 @@ class Seinanseuraaja:
     def aikavaativuus(self):
         return f"Seinänseuraaja-algoritmin suorittamiseen kului {self.aika}"
 
-    def O_aikavaativuus(self):
+    def o_aikavaativuus(self):
         return f"Seinänseuraaja kävi läpi {self.o_aika} silmukkaa"
 
     def polun_pituus(self):

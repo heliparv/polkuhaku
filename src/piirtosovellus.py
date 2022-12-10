@@ -50,7 +50,7 @@ while running:
     for e in pygame.event.get():
         if e.type == pygame.QUIT:
             running = False
-    
+
     naytto.fill((0,0,0))
     for ruutu in lattia:
         pygame.draw.rect(naytto, (255, 255, 255), ruutu)
@@ -62,6 +62,6 @@ while running:
 
     pygame.display.flip()
     kello.tick(60)
-    
+
 
 pygame.quit()

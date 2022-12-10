@@ -64,7 +64,7 @@ class Labyrintti:
 
         Tarkistaa millä reunalla alku- ja loppusolmut ovat ja merkitsee siirtymän suoraan
         kohti labyrinttia. Sitten tarkistaa voiko tehdä vinottaisen liikkeen.
-        
+
         Funktio on täysin turha jos alku ja loppu ovat aina samoissa nurkissa,
         kuten testilabyrintissa'''
 
@@ -79,15 +79,15 @@ class Labyrintti:
                     if self.grafiikka[i][reuna+ero] == ' ':
                         self.labyrintti[(i,reuna)].append((i, reuna+ero))
                         self.labyrintti[(i,reuna+ero)].append((i,reuna))
-                        #self.kaaret += 1 
+                        self.kaaret += 1
                         if self.grafiikka[i-1][reuna+ero] == ' ':
                             self.labyrintti[(i, reuna)].append((i-1,reuna+ero))
                             self.labyrintti[(i-1,reuna+ero)].append((i,reuna))
-                            #self.kaaret += 1
+                            self.kaaret += 1
                         if self.grafiikka[i+1][reuna+ero] == ' ':
                             self.labyrintti[(i,reuna)].append((i+1,reuna+ero))
                             self.labyrintti[(i+1,reuna+ero)].append((i,reuna))
-                            #self.kaaret += 1
+                            self.kaaret += 1
                         if self.grafiikka[i][reuna] == 'A':
                             self.labyrintti['alku'] = (i,reuna)
                         else:
@@ -100,7 +100,7 @@ class Labyrintti:
 
         Tarkistaa millä reunalla alku- ja loppusolmut ovat ja merkitsee siirtymän suoraan
         kohti labyrinttia. Sitten tarkistaa voiko tehdä vinottaisen liikkeen.
-        
+
         Funktio on täysin turha jos alku ja loppu ovat aina samoissa nurkissa,
         kuten testilabyrintissa'''
 
@@ -145,7 +145,7 @@ class Labyrintti:
                     self.labyrintti[(i,j)].append((i,j+1))
                     self.labyrintti[(i,j+1)].append((i,j))
                     self.kaaret += 1
-    
+
     def poista_seinasolmut(self):
         '''Käy läpi labyrintin verkkoesityksen ja poistaa solmut, joista ei
         ole yhteyksiä muihin solmuihin. Tätä käytetään poistamaan alussa
@@ -167,13 +167,13 @@ class Labyrintti:
 
     def tulosta_grafiikka(self):
         '''Tulostaa grafiikan riveittäin, jotta se näyttää labyrintilta'''
-        for i in range(len(self.grafiikka)):
-            print(self.grafiikka[i])
+        for rivi in self.grafiikka:
+            print(rivi)
 
     def tulosta_ratkaisu(self):
         '''Tulostaa ratkaisugrafiikan riveittäin, jotta se näyttää labyrintilta'''
-        for i in range(len(self.ratkaisu)):
-            print(self.ratkaisu[i])
+        for rivi in self.ratkaisu:
+            print(rivi)
         print('')
 
     def leveys(self):

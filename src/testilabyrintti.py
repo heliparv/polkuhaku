@@ -10,7 +10,7 @@ class Testilabyrintti:
 
     def __init__(self, leveys = 1, korkeus = 1, tiheys = 'harva'):
         '''Käyttää omaa luo_labyrintti funktiota luodakseen
-        labyrintin annettujen leveyden, korkeuden ja 
+        labyrintin annettujen leveyden, korkeuden ja
         harva, tiheä vai siksak määrityksen perusteella.
         Luo harvan labyrintin jos käyttäjällä käy typo'''
         self.labyrintti = []
@@ -23,14 +23,13 @@ class Testilabyrintti:
                 self.luo_labyrintti(leveys, korkeus, self.harva())
         else:
             self.luo_labyrintti(1, 1, self.harva())
-        
-    
+
     def luo_labyrintti(self, leveys: int, korkeus: int, metodi):
         '''Luo labyrintin käyttäen toistokuviota.
         Toistokuvioita voi laittaa vierekkäin ja päällekäin
         halutun verran ja alku- ja loppusolmu tulevat aina
         labyrintin ylä- ja alakulmaan.
-        
+
         Funktiolle annetut muuttujat leveys ja korkeus
         kertovat toistojen lukumäärän'''
 
@@ -64,7 +63,7 @@ class Testilabyrintti:
         ''''Palauttaa labyrintin luontia varten tiheän
         toistokuvion. Tätä toistaen saadaan aikaan
         labyrintti, jossa on paljon seiniä
-        
+
         Suunniteltu suosimaan leveyshakualgoritmia'''
 
         return [' #       ######',
@@ -83,7 +82,7 @@ class Testilabyrintti:
         '''Palauttaa labyrintin luontia varten toistokuvion,
         jolla voidaan luoda pystysuuntaista siksakkia suosiva
         labyrintti.
-        
+
         Suunniteltu suosimaan seinänseuraajaa'''
 
         return ['   #     #     ',

@@ -20,5 +20,5 @@
 | 3.12.  | 2.3      | n. 1.5 h edelleen pythonin ympäristöjen etsimistä, algoritmien ajankäytön testaus reaaliaikaisena, tekstikäyttöliittymään tulevan tulosteen järkeistäminen  |
 | 8.12.  | 3,5      | Testilabyrinttien yleistyksen parantaminen, O()-aikavaativuuden määrittämisen pohtimisen aloittelua, muuta sälää |
 | 9.12.  | 1,5      | Koordinaattien esitys stringistä tupleiksi ja muuta järkeilyä|
-| 10.12. |          | O()-muotoisen aikavaativuuden mittauksen suunnittelua, refaktorointia erityisesti graafisseen esitykseen valmistautuen |
-| Yhteensä |   | Projektiin yhteensä kulunut aika |
+| 10.12. | 7        | O()-muotoisen aikavaativuuden mittauksen suunnittelua ja mittausta, refaktorointia erityisesti graafiseen esitykseen valmistautuen |
+| Yhteensä | 44,1  | Projektiin yhteensä kulunut aika |

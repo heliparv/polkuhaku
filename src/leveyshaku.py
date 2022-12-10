@@ -1,6 +1,6 @@
+import time
 from collections import deque
 from labyrintti import Labyrintti
-import time
 
 class Leveyshaku:
     '''Luokka leveyshaun toteuttamiseen'''
@@ -9,7 +9,7 @@ class Leveyshaku:
         '''alustaa sanakirjan, johon tallennetaan solmut linkitettynä
         ns käänteisessä kävelyjärjestyksessä, siirtyy ascii-hakuun,
         koska tällä hetkellä toimitaan edelleen terminaalissa
-        
+
         polut: sanakirjarakenne, jossa solmut linkitetään edelliseen
         läpikäytyyn solmuun.
         esitys: tallentaa läpikäydyt solmut graafista esitystä varten
@@ -86,7 +86,6 @@ class Leveyshaku:
         '''Luo esityksen löydetystä lyhyimmästä polusta ja
         kertoo sen pituuden'''
         self.laby.luo_ratkaisugrafiikka()
-        paikka = self.laby.labyrintti['loppu']
         for solmu in self.oikea_polku:
             self.laby.merkitse_kayty_paikka(solmu)
         print("Leveyshaun löytämä ratkaisu:")
@@ -95,7 +94,7 @@ class Leveyshaku:
     def aikavaativuus(self):
         return f"Leveyshaun suorittamiseen kului {self.aika}"
 
-    def O_aikavaativuus(self):
+    def o_aikavaativuus(self):
         return f"Leveyshaku kävi läpi {self.o_aika} silmukkaa"
 
     def polun_pituus(self):

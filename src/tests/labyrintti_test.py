@@ -3,7 +3,6 @@ from labyrintti import Labyrintti
 
 class testLabyrintti(unittest.TestCase):
     '''Testaa labyrintteja käsittelevää luokkaa'''
-
     def setUp(self):
         '''Luo testattavan luokan mukaisen olion'''
         self.laby = Labyrintti()
@@ -44,14 +43,14 @@ class testLabyrintti(unittest.TestCase):
         a = ['###','A #','#B#']
         self.laby = Labyrintti(a)
         self.assertEqual(self.laby.labyrintti['alku'], (1,0))
-    
+
     def test_osaa_lukea_vasemman_reunan(self):
         '''Tarkistaa, että myös vasemmassa reunassa olevan alkusolmun
         havaitseminen onnistuu'''
         a = ['###','# A','#B#']
         self.laby = Labyrintti(a)
         self.assertEqual(self.laby.labyrintti['alku'], (1,2))
-    
+
     def test_osaa_lukea_alareunan(self):
         '''Tarkistaa, että labyrintti havaitsee alareunassa olevan
         loppusolmun, eli samalla havaitaanko loppusolmu'''
