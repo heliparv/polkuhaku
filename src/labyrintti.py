@@ -137,6 +137,10 @@ class Labyrintti:
                     self.labyrintti[(i,j)].append((i+1,j+1))
                     self.labyrintti[(i+1,j+1)].append((i,j))
                     self.kaaret += 1
+                if self.grafiikka[i-1][j+1] == ' ' and (self.grafiikka[i-1][j] == ' ' or self.grafiikka[i][j+1] == ' '):
+                    self.labyrintti[(i,j)].append((i-1,j+1))
+                    self.labyrintti[(i-1,j+1)].append((i,j))
+                    self.kaaret += 1
                 if self.grafiikka[i+1][j] == ' ':
                     self.labyrintti[(i,j)].append((i+1,j))
                     self.labyrintti[(i+1,j)].append((i,j))
