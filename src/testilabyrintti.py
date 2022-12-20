@@ -48,16 +48,16 @@ class Testilabyrintti:
         labyrintti, jossa on vähän seiniä ja joka on
         molemmille algoritmeille helppo '''
 
-        return ['      #   #    ',
-                '##        #  ##',
-                '          #    ',
-                '   ########  # ',
-                '             # ',
-                '   #######   # ',
-                '             # ',
-                '      #      # ',
-                '      #   #  # ',
-                ' #    #   #    ']
+        return ['               ',
+                '##            #',
+                '     #####     ',
+                '               ',
+                '#      #    ###',
+                '       #       ',
+                '  #    #       ',
+                '  #            ',
+                '  #            ',
+                '        ###    ']
 
     def tihea(self):
         ''''Palauttaa labyrintin luontia varten tiheän
@@ -68,13 +68,12 @@ class Testilabyrintti:
 
         return [' #       ######',
                 ' # #####      #',
-                ' # #   ###### #',
-                '   ###        #',
-                '#### # ###### #',
-                '       #    #  ',
+                '   #    ##### #',
+                '#### ##   #   #',
+                '       #  # #  ',
                 '###### #### ###',
-                '     #      ## ',
-                '# #### ####  # ',
+                '            ## ',
+                '# #########  # ',
                 '#        ##### ',
                 '########       ']
 
