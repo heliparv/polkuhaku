@@ -1,21 +1,20 @@
 from copy import deepcopy
 
 class Labyrintti:
-    '''Luokka labyrintille. Tällä hetkellä palauttaa vain pyydettäessä yhden
-    labyrintin, jotta saadaan ensin varsinaiset algoritmit tehtyä.
-    Myöhemmin koodataan vaihtoehtoja.
+    '''Luokka joka käsittelee annettua tekstimuotoista labyrinttia ja muodostaa
+    siitä verkkomuotoisen esityksen.
 
     Labyrintin muodon sääntöjä: Reunat ovat aina seinää, lukuun ottamatta alku-
     ja loppupisteitä, jotka ovat aina labyrintin reunoilla. Alku- tai loppupisteet
-    eivät voi olla kulmissa. Labyrintissa on vain seinää tai lattiaa sisällä.
+    eivät voi olla kulmissa. Labyrintti koostuu vain seinästä ja lattiasta.
     Labyrintissa voi liikkua pystyyn ja vaakaan jos vierekkäiset palat ovat lattiaa.
     Vinottain voi liikkua jos vinoruutu on lattiaa ja vähintään toinen lähtöruudun
-    ja vinoruudun vieressä olevista ruuduista on lattiaa.
+    ja vinoruudun vieressä olevista ruuduista on lattiaa. Vinosiirtymää käsitellään
+    saman pituisena kuin sivulle tai pystysuunnassa siirtymistä
 
     Luokan muuttujat:
     grafiikka: tallentaa ASCII-grafiikan
     labyrintti: tallentaa labyrintin verkkoesityksen sanakirjana
-    ratkaisu: tallentaa ASCII-grafiikan, jossa lattiasolmuja merkitty
     kaaret: tallentaa labyrintista löytyvien kaarien määrän, tätä käytetään
     mitattaessa algoritmien aikavaativuutta
     '''
@@ -37,7 +36,6 @@ class Labyrintti:
         else:
             self.grafiikka = grafiikka
         self.labyrintti = {}
-        self.ratkaisu = []
         self.kaaret = 0
         self.lue_labyrintti()
 
@@ -160,25 +158,10 @@ class Labyrintti:
                 if self.labyrintti[(i,j)] == []:
                     del self.labyrintti[(i,j)]
 
-    def luo_ratkaisugrafiikka(self):
-        '''Alustaa grafiikan ratkaisuesitystä varten'''
-        self.ratkaisu = deepcopy(self.grafiikka)
-
-    def merkitse_kayty_paikka(self, paikka):
-        '''Merkitsee annetun lattiapaikan käydyksi ratkaisuesityksessä'''
-        mjono = self.ratkaisu[paikka[0]]
-        self.ratkaisu[paikka[0]] = mjono[:paikka[1]]+'.'+mjono[paikka[1]+1:]
-
     def tulosta_grafiikka(self):
         '''Tulostaa grafiikan riveittäin, jotta se näyttää labyrintilta'''
         for rivi in self.grafiikka:
             print(rivi)
-
-    def tulosta_ratkaisu(self):
-        '''Tulostaa ratkaisugrafiikan riveittäin, jotta se näyttää labyrintilta'''
-        for rivi in self.ratkaisu:
-            print(rivi)
-        print('')
 
     def leveys(self):
         return len(self.grafiikka[0])

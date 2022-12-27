@@ -21,4 +21,12 @@
 | 8.12.  | 3,5      | Testilabyrinttien yleistyksen parantaminen, O()-aikavaativuuden määrittämisen pohtimisen aloittelua, muuta sälää |
 | 9.12.  | 1,5      | Koordinaattien esitys stringistä tupleiksi ja muuta järkeilyä|
 | 10.12. | 7        | O()-muotoisen aikavaativuuden mittauksen suunnittelua ja mittausta, refaktorointia erityisesti graafiseen esitykseen valmistautuen |
-| Yhteensä | 44,1  | Projektiin yhteensä kulunut aika |
+| 13.12. | 1        | Graafisen käyttöliittymän valmistelua |
+| 14.12. | 0.5      | Graafisen käyttöliittymän valmistelua |
+| 16.12. | 0.5      | Polkuhakujen toiminnan piirtelyä |
+| 18.12. | 1        | Graafinen käyttöliittymän valmistelua |
+| 19.12. | 3        | Graafisen käyttöliittymän koodaamista, bugikorjausta |
+| 20.12. | 2        | Graafisen käyttöliittymän koodaamista, testilabyrinttien muokkaamista, esityksen valmistelua |
+| 21.12. | 2        | Esityksen valmistelua, käyttöliittymän koodaamista |
+| 27.12. |          | Käyttöliittymän koodaamista, turhan koodin poistamista |
+| Yhteensä | 52,1  | Projektiin yhteensä kulunut aika |

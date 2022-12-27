@@ -22,7 +22,7 @@ class Leveyshaku:
         self.polut = {}
         self.esitys = []
         self.laby = labyrintti
-        self.oikea_polku = {}
+        self.oikea_polku = []
         self.aika = 0
         self.o_aika = 0
 
@@ -40,23 +40,22 @@ class Leveyshaku:
     def hae_polku(self):
         '''Hakee leveyshaulla reitin, talentaa mennessään listan
         käydyistä lattiaruuduista'''
-        alku = time.time()
+        aloitusaika = time.time()
         kayty = set()
         kayty.add(self.laby.labyrintti['alku'])
         jono = deque()
         jono.append(self.laby.labyrintti['alku'])
         self.esitys.append(self.laby.labyrintti['alku'])
-        valmis = False
-        while not valmis:
+        while jono:
             paikka = jono.popleft()
             self.esitys.append(paikka)
             for naapuri in self.laby.labyrintti[paikka]:
                 self.o_aika += 1
                 if naapuri == self.laby.labyrintti['loppu']:
-                    valmis = True
+                    self.esitys.append(naapuri)
                     self.polut[naapuri] = paikka
-                    loppu = time.time()
-                    self.aika = loppu-alku
+                    lopetusaika = time.time()
+                    self.aika = lopetusaika-aloitusaika
                     self.polun_esitys()
                     break
                 if naapuri in kayty:
@@ -67,9 +66,10 @@ class Leveyshaku:
 
     def polun_esitys(self):
         paikka = self.laby.labyrintti['loppu']
+        self.oikea_polku.append(paikka)
         while True:
             seuraava = self.polut[paikka]
-            self.oikea_polku[paikka] = seuraava
+            self.oikea_polku.append(seuraava)
             paikka = seuraava
             if paikka == self.laby.labyrintti['alku']:
                 break
