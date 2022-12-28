@@ -31,7 +31,22 @@ class Leveyshaku:
 
     def hae_polku(self):
         '''Hakee reitin labyrintin läpi leveyshaku-algoritmilla.
-        Tallentaa tietoa graafista esitystä ja suorituskykymittausta varten'''
+        Tallentaa tietoa graafista esitystä ja suorituskykymittausta varten
+
+        muuttujat:
+        aloitusaika: tallentaa algoritmin suorituksen aloitusajan
+
+        kayty: tietorakenne, jota algoritmi käyttää tarkistaessaan ettei jo
+        käsiteltyjä solmuja käsitellä uudestaan
+
+        jono: Käsiteltävät solmut asetetaan jonoon ja käsitellään algoritmissa
+        samassa järjestyksessä kuin ne on lisätty jonoon
+
+        paikka: Kulloinkin käsiteltävänä oleva solmu, sen koordinaattiesitys
+
+        naapuri: Käsiteltävänä olevan solmun naapurit, eli solmut, joihin
+        kulloisestakin paikasta pääsee liikkumaan
+        '''
         aloitusaika = time.time()
         kayty = set()
         kayty.add(self.laby.labyrintti['alku'])
@@ -46,8 +61,7 @@ class Leveyshaku:
                 if naapuri == self.laby.labyrintti['loppu']:
                     self.esitys.append(naapuri)
                     self.polut[naapuri] = paikka
-                    lopetusaika = time.time()
-                    self.aika = lopetusaika-aloitusaika
+                    self.aika = time.time()-aloitusaika
                     self.polun_esitys()
                     break
                 if naapuri in kayty:
@@ -60,12 +74,14 @@ class Leveyshaku:
         '''Käy läpi leveyshaussa muodostetun polut-tietorakenteen, jossa
         jokainen solmu on linkitetty sitä edeltäneeseen solmuun. Tallentaa
         oikea_polku listaan leveyshaun löytämän polun käänteisessä
-        järjestyksessä'''
+        järjestyksessä
+
+        paikka: Apumuuttuja, johon tallennetaan kulloinkin käsittelyssä
+        oleva solmu'''
         paikka = self.laby.labyrintti['loppu']
         self.oikea_polku.append(paikka)
         while True:
-            seuraava = self.polut[paikka]
-            self.oikea_polku.append(seuraava)
-            paikka = seuraava
+            paikka = self.polut[paikka]
+            self.oikea_polku.append(paikka)
             if paikka == self.laby.labyrintti['alku']:
                 break
