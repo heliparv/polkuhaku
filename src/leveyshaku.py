@@ -9,6 +9,8 @@ class Leveyshaku:
     def __init__(self, labyrintti: Labyrintti):
         '''Alustetaan algoritmin ja graafisen esityksen tarvitsemat rakenteet.
 
+        laby: Tallentaa labyrinttiolion, jolle lebeyshaku suoritetaan 
+
         polut: sanakirjarakenne, jossa läpi käydyt solmut linkitetään edelliseen
         läpikäytyyn solmuun.
 
@@ -22,9 +24,9 @@ class Leveyshaku:
 
         kierrokset: Tallentaa haussa vierailut polkuhaun sisimmässä for-loopissa'''
 
+        self.laby = labyrintti
         self.polut = {}
         self.esitys = []
-        self.laby = labyrintti
         self.oikea_polku = []
         self.aika = 0
         self.kierrokset = 0
