@@ -214,7 +214,7 @@ class Polkuhaku:
             if len(self.seinanseuraaja.seinakosketukset) > 0:
                 y, x = self.seinanseuraaja.seinakosketukset.pop(0)
                 if y == -1:
-                    y, x = self.seinanseuraaja.polkuesitys.pop(0)
+                    y, x = self.seinanseuraaja.polku.pop(0)
                     kayty.append(pygame.Rect(x*self.dimensio,y*self.dimensio,self.dimensio,self.dimensio))
                     koordinaatti = (x*self.dimensio+int(self.dimensio/2), y*self.dimensio+int(self.dimensio/2))
                     if koordinaatti in polku:
