@@ -3,32 +3,35 @@ from collections import deque
 from labyrintti import Labyrintti
 
 class Leveyshaku:
-    '''Luokka leveyshaun toteuttamiseen'''
+    '''Luokka leveyshaun toteuttamiseen. Metodi on esitetty muun muassa
+    kurssilla Tietorakenteet ja Algoritmit'''
 
     def __init__(self, labyrintti: Labyrintti):
-        '''alustaa sanakirjan, johon tallennetaan solmut linkitettynä
-        ns käänteisessä kävelyjärjestyksessä, siirtyy ascii-hakuun,
-        koska tällä hetkellä toimitaan edelleen terminaalissa
+        '''Alustetaan algoritmin ja graafisen esityksen tarvitsemat rakenteet.
 
-        polut: sanakirjarakenne, jossa solmut linkitetään edelliseen
+        polut: sanakirjarakenne, jossa läpi käydyt solmut linkitetään edelliseen
         läpikäytyyn solmuun.
-        esitys: tallentaa läpikäydyt solmut graafista esitystä varten
-        oikea_polku: koska polut-rakenne tallentaa kaikki mahdolliset polut, on
-        löydetty polku käytännöllistä hakea erilleen muita funktioita varten
+
+        esitys: Lista, johon läpi käydyt solmut tallennetaan järjestyksessä
+        algoritmin graafista esitystä varten
+
+        oikea_polku: Lista, johon löydetty reitti tallennetaan järjestyksessä graafista
+        esitystä varten.
+
         aika: Tallentaa hakuun kuluneen ajan reaaliaikaisena
-        o_aika: Tallentaa hakuun käytetyt vierailut polkuhaun sisimmässä
-        for-loopissa, joten saadaan O()-muotoinen aikavaativuus'''
+
+        kierrokset: Tallentaa haussa vierailut polkuhaun sisimmässä for-loopissa'''
 
         self.polut = {}
         self.esitys = []
         self.laby = labyrintti
         self.oikea_polku = []
         self.aika = 0
-        self.o_aika = 0
+        self.kierrokset = 0
 
     def hae_polku(self):
-        '''Hakee leveyshaulla reitin, talentaa mennessään listan
-        käydyistä lattiaruuduista'''
+        '''Hakee reitin labyrintin läpi leveyshaku-algoritmilla.
+        Tallentaa tietoa graafista esitystä ja suorituskykymittausta varten'''
         aloitusaika = time.time()
         kayty = set()
         kayty.add(self.laby.labyrintti['alku'])
@@ -39,7 +42,7 @@ class Leveyshaku:
             paikka = jono.popleft()
             self.esitys.append(paikka)
             for naapuri in self.laby.labyrintti[paikka]:
-                self.o_aika += 1
+                self.kierrokset += 1
                 if naapuri == self.laby.labyrintti['loppu']:
                     self.esitys.append(naapuri)
                     self.polut[naapuri] = paikka
@@ -54,6 +57,10 @@ class Leveyshaku:
                 self.polut[naapuri] = paikka
 
     def polun_esitys(self):
+        '''Käy läpi leveyshaussa muodostetun polut-tietorakenteen, jossa
+        jokainen solmu on linkitetty sitä edeltäneeseen solmuun. Tallentaa
+        oikea_polku listaan leveyshaun löytämän polun käänteisessä
+        järjestyksessä'''
         paikka = self.laby.labyrintti['loppu']
         self.oikea_polku.append(paikka)
         while True:
