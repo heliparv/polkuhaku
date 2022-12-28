@@ -26,17 +26,6 @@ class Leveyshaku:
         self.aika = 0
         self.o_aika = 0
 
-    def hae_polku_ascii(self):
-        '''Käyttää funktiota hae_polku reitin löytämiseen, tulostaa
-        lopuksi esityksen käydyistä lattiaruuduista. Kun loppu on löydetty,
-        tulostaa reitin'''
-
-        self.laby.luo_ratkaisugrafiikka()
-        self.hae_polku()
-        self.laby.tulosta_ratkaisu()
-        self.esita_kaydyt_paikat_ascii()
-        self.esita_polku_ascii()
-
     def hae_polku(self):
         '''Hakee leveyshaulla reitin, talentaa mennessään listan
         käydyistä lattiaruuduista'''
@@ -73,29 +62,3 @@ class Leveyshaku:
             paikka = seuraava
             if paikka == self.laby.labyrintti['alku']:
                 break
-
-    def esita_kaydyt_paikat_ascii(self):
-        self.laby.luo_ratkaisugrafiikka()
-        for solmu in self.esitys:
-            self.laby.merkitse_kayty_paikka(solmu)
-        print('Leveyshaussa vieraillut solmut:')
-        self.laby.tulosta_ratkaisu()
-
-
-    def esita_polku_ascii(self):
-        '''Luo esityksen löydetystä lyhyimmästä polusta ja
-        kertoo sen pituuden'''
-        self.laby.luo_ratkaisugrafiikka()
-        for solmu in self.oikea_polku:
-            self.laby.merkitse_kayty_paikka(solmu)
-        print("Leveyshaun löytämä ratkaisu:")
-        self.laby.tulosta_ratkaisu()
-
-    def aikavaativuus(self):
-        return f"Leveyshaun suorittamiseen kului {self.aika}"
-
-    def o_aikavaativuus(self):
-        return f"Leveyshaku kävi läpi {self.o_aika} silmukkaa"
-
-    def polun_pituus(self):
-        return f"Leveyshaulla löydetun polun pituus on {len(self.oikea_polku)}"

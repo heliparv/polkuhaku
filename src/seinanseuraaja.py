@@ -27,23 +27,15 @@ class Seinanseuraaja:
         '''Funktio, joka suorittaa tavallisen seinänseuraaja-algoritmin.
         Mittaa suoritusajan, ei tallenna aputietorakenteita graafista esitystä varten'''
         aloitusaika = time.time()
-        self.ensiaskel()
-        jatketaan = True
-        while jatketaan:
-            jatketaan = self.hae_askel()
-        lopetusaika = time.time()
-        self.aika = lopetusaika-aloitusaika
-
-    def hae_graafinen_polku(self):
-        '''Funktio suorittaa seinänseuraaja-algoritmin niin, että tallentaa
-        aputietorakenteita graafista esitystä varten'''
         self.polkuesitys.append(self.laby.labyrintti['alku'])
         self.ensiaskel()
         self.seinakosketukset.append((-1,-1))
         self.polkuesitys.append(self.paikka)
         jatketaan = True
         while jatketaan:
-            jatketaan = self.hae_askel_grafiikalla()
+            jatketaan = self.hae_askel()
+        lopetusaika = time.time()
+        self.aika = lopetusaika-aloitusaika
 
     def ensiaskel(self):
         '''Tarkistaa millä reunalla labyrintin alku on ja ottaa ensimmäisen askeleen
@@ -77,28 +69,9 @@ class Seinanseuraaja:
     def hae_askel(self):
         '''Hakee seuraavan askeleen hyödyntäen seinänhakijaa.
 
-        Seinänhakijalle syötetty hakusuunta-muuttuja on suhteellinen koordinaattisiirtymä
+        Seinänhakijalle syötetty hakusuunta-muuttuja on su<hteellinen koordinaattisiirtymä
         nykyisestä paikasta edelliseen solmuun ja ns. siirtymäkompassia lähdetään
         tarkistamaan tästä vastapäivään'''
-
-        hakusuunta = (self.polku[self.paikka][0]-self.paikka[0], self.polku[self.paikka][1]-self.paikka[1])
-        while True:
-            self.o_aika += 1
-            hakusuunta = self.seinanhakija[hakusuunta]
-            hakukoord = (self.paikka[0]+hakusuunta[0], self.paikka[1]+hakusuunta[1])
-            if hakukoord not in self.laby.labyrintti[self.paikka]:
-                continue
-            break
-        self.polku[hakukoord] = self.paikka
-        self.paikka = hakukoord
-        if self.paikka == self.laby.labyrintti['loppu']:
-            return False
-        return True
-
-    def hae_askel_grafiikalla(self):
-        '''Hakee seuraavan askeleen hyödyntäen seinänhakijaa.
-
-        Toimii kuten hae_askel, mutta tallentaa seinäkosketukset.'''
 
         hakusuunta = (self.polku[self.paikka][0]-self.paikka[0], self.polku[self.paikka][1]-self.paikka[1])
         while True:
@@ -116,19 +89,3 @@ class Seinanseuraaja:
         if self.paikka == self.laby.labyrintti['loppu']:
             return False
         return True
-
-    def piirra_polku(self):
-        self.laby.luo_ratkaisugrafiikka()
-        for paikka in self.polku:
-            self.laby.merkitse_kayty_paikka(self.polku[paikka])
-        print('Seinänseuraaja-algoritmin löytämä polku:')
-        self.laby.tulosta_ratkaisu()
-
-    def aikavaativuus(self):
-        return f"Seinänseuraaja-algoritmin suorittamiseen kului {self.aika}"
-
-    def o_aikavaativuus(self):
-        return f"Seinänseuraaja kävi läpi {self.o_aika} silmukkaa"
-
-    def polun_pituus(self):
-        return f"Seinänseuraaja-algoritmilla löydetun polun pituus on {len(self.polku)}"

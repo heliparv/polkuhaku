@@ -119,7 +119,7 @@ class Polkuhaku:
         self.leveyshaku = Leveyshaku(self.labyrintti)
         self.leveyshaku.hae_polku()
         self.seinanseuraaja = Seinanseuraaja(self.labyrintti)
-        self.seinanseuraaja.hae_graafinen_polku()
+        self.seinanseuraaja.hae_polku()
         self.alusta_labyrintti()
 
     def alusta_labyrintti(self):
@@ -153,7 +153,7 @@ class Polkuhaku:
             self.naytto.blit(rivi1, (750-rivi1.get_width()/2, 160))
             rivi2 = self.isofontti.render('L = Leveyshaku    S = Seinänseuraaja', True, (240, 240, 250))
             self.naytto.blit(rivi2, (750-rivi2.get_width()/2, 300))
-            rivi3 = self.isofontti.render('P = Palaa alkuun', True, (240, 240, 250))
+            rivi3 = self.isofontti.render('P = Palaa takaisin', True, (240, 240, 250))
             self.naytto.blit(rivi3, (750-rivi3.get_width()/2, 390))
             pygame.display.flip()
             self.kello.tick(60)
