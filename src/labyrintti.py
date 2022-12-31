@@ -158,8 +158,9 @@ class Labyrintti:
 
     def laske_kaaret(self):
         '''Laskee labyrintissa esiintyvät kaaret, eli mahdolliset siirtymät
-        lattiaruudusta toiseen. Summa jaetaan kahdella, koska ajatellaan yhteyksien
-        lattiaruutujen välillä olevan suuntaamattomia kaaria'''
+        lattiaruudusta toiseen. Jos ajateltaisiin kaaria tiukasti yksisuuntaisina
+        painottamattomina kaarina niin summa tulisi jakaa kahdella. Algoritmin
+        suorituksessa kaari kuitenkin syötetään kumpikin suunta erikseen, joten tätä
+        mitataan myös suorituskykytestauksessa'''
         for kaaret in self.labyrintti:
             self.kaaret += len(kaaret)
-        self.kaaret = int(self.kaaret/2)

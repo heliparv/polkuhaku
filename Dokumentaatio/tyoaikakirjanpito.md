@@ -28,5 +28,9 @@
 | 19.12. | 3        | Graafisen käyttöliittymän koodaamista, bugikorjausta |
 | 20.12. | 2        | Graafisen käyttöliittymän koodaamista, testilabyrinttien muokkaamista, esityksen valmistelua |
 | 21.12. | 2        | Esityksen valmistelua, käyttöliittymän koodaamista |
-| 27.12. |          | Käyttöliittymän koodaamista, turhan koodin poistamista |
-| Yhteensä | 52,1  | Projektiin yhteensä kulunut aika |
+| 27.12. | 2        | Käyttöliittymän koodaamista, turhan koodin poistamista |
+| 28.12. | 1,75     | Pylint, dokumentaatiota, vanhan koodin poistamista, refaktorointia |
+| 29.12. | 2        | Dokumentaatiota, refaktorointia, poetryn kanssa tappelua |
+| 30.12. | 2,3      | Dokumentaatiota, refaktorointia, testien kirjoittamista, poetryn kanssa tappelua |
+| 31.12. | 5,5      | Dokumentaatiota, testausta, poetryn kanssa tappelua, github actionsin kanssa tappelua |
+| Yhteensä | 63,65  | Projektiin yhteensä kulunut aika |

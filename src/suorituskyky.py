@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 reaaliaikaisena tai algoritmin suorittamien looppien määränä verrattuna
 algoritmille syötettynä lattiaruutujen ja mahdollisten liikkeiden määrään
 
-Koodi on huonolaatuinen spagetti, pahoittelut, tämä ei ollut prioriteetti :D'''
+Koodi on huonolaatuinen spagetti, pahoittelut :D'''
 
 #Valitse labyrintin tyyppi: 'harva', 'tiheä' tai 'siksak'
 tyyppi = 'tiheä'

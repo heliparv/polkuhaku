@@ -12,8 +12,8 @@ Leveyshaulla saavutetaan aikavaativuus O(n+m) jossa n on kaarien (mahdollisten l
 Seinänseuraaja-algoritmi on vahvasti graafiseen labyrinttimuotoon sidottu, joten sen aikavaativuus on O(m) jossa m on solmujen (lattiaruutujen) lukumäärä.
 
 ## Työn mahdolliset puutteet ja parannusehdotukset
+- Testaus. Pelkästään ohjelman toiminnallisuuden pystyyn saaminen on ollut iso haaste käytettävissä olleen ajan ja energian puitteissa, joten tein valinnan saada aikaan testaamaton ohjelma sen sijaan että olisi ollut keskeneräisempi ohjelma jossa testausta on. Mikä ei ole silleen hirvittävän ammattimainen valinta käpistelijälle :D
 - HPA* algoritmi jäi toteuttamatta ja olisi ollut kiva kokeilla
-- Testaamiseen olisi voinut käyttää enemmän aikaa ja energiaa
 - Algoritmit eivät osaa käsitellä umpikujaa, mikä toki ei ole ongelma kun ohjelmalle voi nyt syöttää vain labyrintteja ilman umpikujia
 - Olisi kiva jos algoritmille voisi syöttää oman labyrintin tai generoida sattumanvaraisen labyrintin, mutta tämä ei ollut ykkösprioriteetti ohjelmalla jonka tarkoitus oli käsitellä algoritmeja polun etsimiseen
 

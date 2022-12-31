@@ -3,6 +3,7 @@ from labyrintti import Labyrintti
 
 class testLabyrintti(unittest.TestCase):
     '''Testaa labyrintteja käsittelevää luokkaa'''
+
     def setUp(self):
         '''Luo testattavan luokan mukaisen olion'''
         self.laby = Labyrintti()
@@ -14,10 +15,20 @@ class testLabyrintti(unittest.TestCase):
         self.assertEqual(self.laby.grafiikka[0][0], '#')
     
     def test_tyhja_alustus_luo_labyrintin_verkkoesityksen(self):
-        '''Kun alustetaan luokka antamatta grafiikkaa, luo luokka
-        sen olemassaolevasta labyrinttigrafiikasta verkkoestyksen,
-        eli testataan verkkoesityksen olevan olemassa'''
+        '''Tarkistaa, että labyrintin verkkoesitys ei ole tyhjä'''
+        self.assertGreater(len(self.laby.labyrintti), 0)
+
+    def test_alku_lisataan_verkkoon(self):
+        '''Testaa, että verkkoestyksessä on tieto alkusolmusta'''
         if 'alku' in self.laby.labyrintti:
+            alku_loytyi = True
+        else:
+            alku_loytyi = False
+        self.assertEqual(alku_loytyi, True)
+
+    def test_loppu_lisataan_verkkoon(self):
+        '''Testaa, että verkkoestyksessä on tieto loppusolmusta'''
+        if 'loppu' in self.laby.labyrintti:
             alku_loytyi = True
         else:
             alku_loytyi = False
@@ -30,14 +41,16 @@ class testLabyrintti(unittest.TestCase):
         ainoa mahdollinen yhteys labyrintin sisään'''
         self.assertEqual(self.laby.labyrintti[(0,1)], [(1,1)])
     
-    def test_annettu_labyrintti_grafiikaksi(self):
+    def test_annettu_labyrintti_tallentuu_grafiikaksi(self):
         '''Tarkistaa että jos labyrintin alustaa antaen sille grafiikan,
         on kyseinen grafiikka tallennettu luokan grafiikkamuuttujaan'''
-        a = ['###','A #','#B#']
+        a = ['###',
+             'A #',
+             '#B#']
         self.laby = Labyrintti(a)
         self.assertEqual(self.laby.grafiikka, a)
     
-    def test_annettu_labyrintti_verkoksi(self):
+    def test_annettu_labyrintti_tallentuu_verkoksi(self):
         '''Tarkistaa, että annetusta grafiikasta luodaan verkko,
         muttei verkon oikeellisuutta.'''
         a = ['###','A #','#B#']
