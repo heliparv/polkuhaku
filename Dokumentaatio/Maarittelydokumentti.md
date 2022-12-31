@@ -1,5 +1,4 @@
 # Määrittelydokumentti
-HUOM! Esitetyt algoritmit todennäköisesti vaihtuvat, kunhan koodari keksii mikä kiinnostaa ja mitä haluaa elämältä.
 
 ### Kielet
 Python on projektissa käytetty ohjelmointikielikieli ja ainoa ohjelmointikieli, jolla osaan antaa järkevää palautetta ohjelmistoprojektin tasoisesta työstä.
@@ -12,15 +11,15 @@ Projektissa verrataan reitinhakualgoritmeja lyhyimmän reitin löytämiseen alus
 Verrattavat algoritmit ja perustelut niiden valintaan:
 - Leveyshaku (Breadth First Search): Yksinkertainen, löytää taatusti lyhyimmän reitin.
     - Aikavaativuustavoite: O(n+m) jossa m solmut ja n kaaret
+    - Koska labyrintissa n per solmu on aina korkeintaan 8, on aikavaativuus käytännössä O(m)
 - Wall follower: Yksinkertainen, käytetty jo antiikissa, saattaa olla leveyshakua nopeampi riippuen labyrintista
     - Aikavaativuustavoite: pienempi kuin O(n+m)
-    - Saattaa kuulemma jäädä jumiin jos labyrintissa on syklejä. Oletan, ettei tämä tule ongelmaksi nykyisenmuotoisten labyrinttien ja käytössä olevan algoritmin kanssa, mutta katsotaan!
-    - Olisiko ollut fiksumpaa etsiä valmis pseudokoodi kuin toteuttaa itse konseptin pohjalta? Todennäköisesti. Tämä kuitenkin antaa ihmiselle murusen verran serotoniinia joten tehdään nyt näin. :D
+    - Koska labyrintissa n per solmu on aina korkeintaan 8, on aikavaativuus käytännössä O(m)
 - Mikäli jää aikaa ja energiaa: Hierarchical Pathfinding A*, HPA*
+    - Ei jäänyt aikaa ja energiaa, mutta katsotaan jos kehitys jatkuisi kurssin jälkeen omalla harrastuneisuudella
     - Aikavaativuustavoite: Lähteet sanovat että pitäisi olla kymmenkertaisesti lyhyempi kuin A*, jolla O(b^d) jossa b on keskimääräinen yhteyksien määrä ja d on lyhyimmän polun pituus
-    - HPA*:n ei pitäisi toimia labyrintissa jos eteneminen kohti maalia ei ole aina optimaalinen idea ja jos maalin sijainti ei ole tiedossa. Käytetyssä algoritmissa oletetaan maalin sijainti tunnetuksi ja Botea et al ovat esittävät tuloksia algoritmilla Baldur's gaten labyrinteissa, joten kiinnostaa.
 
-Kolmen algoritmin toimintaa verrataan eri kokoisissa labyrinteissa, joissa on joko paljon tai vähän seiniä.
+Algoritmien toimintaa verrataan eri kokoisissa labyrinteissa, joissa on joko paljon tai vähän seiniä.
 
 ### Koodarin koulutusohjelma
 Tietojenkäsittelytieteen kandiohjelma
